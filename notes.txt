@@ -1,0 +1,11 @@
+* para update la posicion, primero lee el file para obtener los valores, luego aplica las funciones.
+* nuevas instancias de imu_driver deben tener access al imu_data.txt file
+
+* so para crear el file:
+  - revisa si existe
+    - si existe
+      - do nothing
+    - si no existe
+      - crea el file y asigna los valores iniciales
+
+* los valores iniciales estan presente en cada instance de imu_driver y son actualizadas con la ultima linea del imu_data.txt si existe
