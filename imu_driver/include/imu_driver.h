@@ -1,8 +1,10 @@
 /**
- * @brief Create a file named "imu_data.txt" to store the data and writes the
- * initial position, velocity and acceleration values if it does not already
- * exist. If the file exists, the function updates the position, velocity and
- * acceleration values to those previously stored in "imu_data.txt".
+ * @brief Create a file named "imu_data.txt" to store the data.
+ *
+ * Create a file named "imu_data.txt" to store the data and writes the initial
+ * position, velocity and acceleration values if it does not already exist. If
+ * the file exists, the function updates the position, velocity and acceleration
+ * values to those previously stored in "imu_data.txt".
  */
 void CreateFile();
 

@@ -16,4 +16,5 @@ add_executable(imu_driver
                 src/main.c)
 
 target_link_libraries(imu_driver
+                        pthread
                         m)

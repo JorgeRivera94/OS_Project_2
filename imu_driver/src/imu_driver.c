@@ -1,8 +1,16 @@
 #include "imu_driver.h"
 
+#include <math.h>
+#include <sched.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/resource.h>
+#include <time.h>
+#include <unistd.h>
+
+#define PERIOD_MS 200
 
 float time = 0;
 double p_x = 20;
@@ -41,9 +49,17 @@ void CreateFile() {
     return;
   } else {
     // file did not exist
+    // close the file in read mode
     fclose(file_ptr);
+
+    // open the file in write mode
     file_ptr = open("imu_data.txt", "w");
 
     // write initial values TODO
+    fprintf(file_ptr, "%0.2f,%lf,%lf,%lf,%lf,%lf,%lf", time, &p_x, &p_y, &v_x,
+            &v_y, &acc_x, &acc_y);
+
+    // close the file in write mode
+    fclose(file_ptr);
   }
 }
